@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NBA Daily Recap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface2: #1a1a26;
+    --border: #2a2a3a;
+    --text: #e8e8f0;
+    --text-dim: #8888a0;
+    --accent: #ff6b35;
+    --accent-glow: rgba(255, 107, 53, 0.15);
+    --win: #4ade80;
+    --lose: #f87171;
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* --- Grain overlay --- */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* --- Header --- */
+  header {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .brand h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, var(--accent), #ff9f6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .brand .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  /* --- Date nav --- */
+  .date-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .date-nav button {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .date-nav button:hover {
+    background: var(--surface2);
+    border-color: var(--accent);
+  }
+
+  .date-nav .current-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    min-width: 140px;
+    text-align: center;
+  }
+
+  .date-picker-wrap {
+    margin-left: auto;
+  }
+
+  .date-picker-wrap input[type="date"] {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+
+  .date-picker-wrap input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+
+  /* --- Loading / empty states --- */
+  .state-msg {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--text-dim);
+    font-size: 1.1rem;
+  }
+
+  .state-msg .emoji {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+
+  .loader {
+    width: 36px;
+    height: 36px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 16px;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* --- Game card --- */
+  .game-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    overflow: hidden;
+    animation: fadeUp 0.4s ease-out both;
+  }
+
+  .game-card:nth-child(1) { animation-delay: 0.05s; }
+  .game-card:nth-child(2) { animation-delay: 0.10s; }
+  .game-card:nth-child(3) { animation-delay: 0.15s; }
+  .game-card:nth-child(4) { animation-delay: 0.20s; }
+  .game-card:nth-child(5) { animation-delay: 0.25s; }
+  .game-card:nth-child(6) { animation-delay: 0.30s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Score header */
+  .score-header {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .team-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .team-tri {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    width: 36px;
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  .team-name {
+    flex: 1;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .team-score {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.4rem;
+    font-weight: 800;
+    min-width: 48px;
+    text-align: right;
+  }
+
+  .team-row.winner .team-name { color: var(--text); }
+  .team-row.winner .team-score { color: var(--win); }
+  .team-row.loser .team-name { color: var(--text-dim); }
+  .team-row.loser .team-score { color: var(--text-dim); }
+
+  .status-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 0;
+  }
+
+  /* Summary */
+  .game-summary {
+    padding: 0 24px 16px;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  /* Expandable starters */
+  .starters-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    border-top: 1px solid var(--border);
+    padding: 12px 24px;
+    color: var(--text-dim);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.2s;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .starters-toggle:hover {
+    background: var(--surface2);
+    color: var(--text);
+  }
+
+  .starters-toggle .arrow {
+    transition: transform 0.3s;
+    font-size: 0.7rem;
+  }
+
+  .starters-toggle.open .arrow {
+    transform: rotate(180deg);
+  }
+
+  .starters-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .starters-panel.open {
+    max-height: 600px;
+  }
+
+  .starters-content {
+    padding: 0 24px 20px;
+  }
+
+  .starters-team-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 14px;
+    margin-bottom: 8px;
+  }
+
+  .starter-row {
+    display: grid;
+    grid-template-columns: 28px 1fr auto;
+    gap: 8px;
+    align-items: center;
+    padding: 5px 0;
+    font-size: 0.85rem;
+  }
+
+  .starter-pos {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-glow);
+    border-radius: 4px;
+    padding: 2px 0;
+    text-align: center;
+  }
+
+  .starter-name {
+    font-weight: 400;
+    color: var(--text);
+  }
+
+  .starter-stats {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+  }
+
+  .starter-stats span {
+    display: inline-block;
+    min-width: 52px;
+    text-align: right;
+  }
+
+  /* --- Footer --- */
+  footer {
+    padding: 40px 0;
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+
+  footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 600px) {
+    .brand h1 { font-size: 1.5rem; }
+    .score-header { padding: 16px; }
+    .game-summary { padding: 0 16px 12px; }
+    .starters-toggle { padding: 10px 16px; }
+    .starters-content { padding: 0 16px 16px; }
+    .date-picker-wrap { margin-left: 0; margin-top: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="brand">
+      <h1>NBA RECAP</h1>
+      <div class="dot"></div>
+    </div>
+    <div class="date-nav">
+      <button id="prev-btn" onclick="navigate(-1)">← Prev</button>
+      <div class="current-date" id="date-display"></div>
+      <button id="next-btn" onclick="navigate(1)">Next →</button>
+      <div class="date-picker-wrap">
+        <input type="date" id="date-picker" onchange="jumpToDate(this.value)">
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="state-msg">
+      <div class="loader"></div>
+      Loading...
+    </div>
+  </main>
+
+  <footer>
+    Data from <a href="https://nba.com" target="_blank">NBA.com</a> · Updated daily at 1 AM ET via GitHub Actions
+  </footer>
+</div>
+
+<script>
+// ---------------------------------------------------------------------------
+// State
+// ---------------------------------------------------------------------------
+let availableDates = [];
+let currentIndex = 0;
+
+const $content = document.getElementById('content');
+const $dateDisplay = document.getElementById('date-display');
+const $datePicker = document.getElementById('date-picker');
+const $prevBtn = document.getElementById('prev-btn');
+const $nextBtn = document.getElementById('next-btn');
+
+// ---------------------------------------------------------------------------
+// Data fetching
+// ---------------------------------------------------------------------------
+async function loadIndex() {
+  try {
+    const resp = await fetch('data/index.json');
+    if (!resp.ok) throw new Error('No index');
+    const data = await resp.json();
+    availableDates = data.dates || []; // sorted descending
+  } catch {
+    availableDates = [];
+  }
+}
+
+async function loadDate(dateStr) {
+  $content.innerHTML = `<div class="state-msg"><div class="loader"></div>Loading...</div>`;
+  try {
+    const resp = await fetch(`data/${dateStr}.json`);
+    if (!resp.ok) throw new Error('Not found');
+    const data = await resp.json();
+    render(data);
+  } catch {
+    $content.innerHTML = `
+      <div class="state-msg">
+        <div class="emoji">🏀</div>
+        No data for ${formatDateDisplay(dateStr)}.<br>
+        <span style="font-size:0.85rem;">Games may not have been played, or data hasn't been scraped yet.</span>
+      </div>`;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Navigation
+// ---------------------------------------------------------------------------
+function navigate(dir) {
+  const newIdx = currentIndex + dir;
+  if (newIdx >= 0 && newIdx < availableDates.length) {
+    currentIndex = newIdx;
+    updateView();
+  }
+}
+
+function jumpToDate(val) {
+  if (!val) return;
+  const idx = availableDates.indexOf(val);
+  if (idx !== -1) {
+    currentIndex = idx;
+    updateView();
+  } else {
+    // Date not in index — try loading anyway
+    currentIndex = -1;
+    $dateDisplay.textContent = formatDateDisplay(val);
+    $datePicker.value = val;
+    loadDate(val);
+  }
+}
+
+function updateView() {
+  if (availableDates.length === 0) {
+    $content.innerHTML = `
+      <div class="state-msg">
+        <div class="emoji">📡</div>
+        No data yet.<br>
+        <span style="font-size:0.85rem;">The scraper runs daily at 1 AM ET. Check back after games are played.</span>
+      </div>`;
+    return;
+  }
+  const dateStr = availableDates[currentIndex];
+  $dateDisplay.textContent = formatDateDisplay(dateStr);
+  $datePicker.value = dateStr;
+  $prevBtn.disabled = currentIndex >= availableDates.length - 1;
+  $nextBtn.disabled = currentIndex <= 0;
+  loadDate(dateStr);
+}
+
+// ---------------------------------------------------------------------------
+// Rendering
+// ---------------------------------------------------------------------------
+function render(data) {
+  const games = data.games || [];
+  if (games.length === 0) {
+    $content.innerHTML = `
+      <div class="state-msg">
+        <div class="emoji">😴</div>
+        No games on ${formatDateDisplay(data.date)}.
+      </div>`;
+    return;
+  }
+
+  $content.innerHTML = games.map((g, i) => gameCard(g, i)).join('');
+}
+
+function gameCard(g, idx) {
+  const home = g.home;
+  const away = g.away;
+  const isFinal = g.status && g.status.includes('Final');
+  const homeWon = home.score > away.score;
+
+  return `
+    <div class="game-card">
+      <div class="score-header">
+        <div class="status-badge">${escHtml(g.status)}</div>
+        <div class="team-row ${isFinal ? (homeWon ? 'loser' : 'winner') : ''}">
+          <div class="team-tri">${escHtml(away.tricode)}</div>
+          <div class="team-name">${escHtml(away.name)}</div>
+          <div class="team-score">${away.score}</div>
+        </div>
+        <div class="team-row ${isFinal ? (homeWon ? 'winner' : 'loser') : ''}">
+          <div class="team-tri">${escHtml(home.tricode)}</div>
+          <div class="team-name">${escHtml(home.name)}</div>
+          <div class="team-score">${home.score}</div>
+        </div>
+      </div>
+      ${g.summary ? `<div class="game-summary">${escHtml(g.summary)}</div>` : ''}
+      ${startersSection(g, idx)}
+    </div>`;
+}
+
+function startersSection(g, idx) {
+  const homeS = g.home.starters || [];
+  const awayS = g.away.starters || [];
+  if (homeS.length === 0 && awayS.length === 0) return '';
+
+  const id = `starters-${idx}`;
+  return `
+    <button class="starters-toggle" onclick="toggleStarters('${id}', this)">
+      Starters
+      <span class="arrow">▼</span>
+    </button>
+    <div class="starters-panel" id="${id}">
+      <div class="starters-content">
+        ${startersTeam(g.away.tricode, awayS)}
+        ${startersTeam(g.home.tricode, homeS)}
+      </div>
+    </div>`;
+}
+
+function startersTeam(tri, starters) {
+  if (starters.length === 0) return '';
+  const rows = starters.map(s => `
+    <div class="starter-row">
+      <div class="starter-pos">${escHtml(s.position || '—')}</div>
+      <div class="starter-name">${escHtml(s.name)}</div>
+      <div class="starter-stats">
+        <span>${s.pts} pts</span>
+        <span>${s.reb} reb</span>
+        <span>${s.ast} ast</span>
+      </div>
+    </div>`).join('');
+  return `<div class="starters-team-label">${escHtml(tri)}</div>${rows}`;
+}
+
+function toggleStarters(id, btn) {
+  const panel = document.getElementById(id);
+  panel.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+
+// ---------------------------------------------------------------------------
+// Helpers
+// ---------------------------------------------------------------------------
+function formatDateDisplay(dateStr) {
+  try {
+    const [y, m, d] = dateStr.split('-').map(Number);
+    const dt = new Date(y, m - 1, d);
+    return dt.toLocaleDateString('en-US', {
+      weekday: 'short', month: 'short', day: 'numeric', year: 'numeric'
+    });
+  } catch {
+    return dateStr;
+  }
+}
+
+function escHtml(str) {
+  if (!str) return '';
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+// ---------------------------------------------------------------------------
+// Init
+// ---------------------------------------------------------------------------
+(async () => {
+  await loadIndex();
+  if (availableDates.length > 0) {
+    currentIndex = 0; // most recent
+  }
+  updateView();
+})();
+</script>
+
+</body>
+</html>
