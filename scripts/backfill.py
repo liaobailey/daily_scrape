@@ -9,15 +9,15 @@ import sys
 import time
 from datetime import datetime, timedelta
 
-# Import everything from the main scraper
 from scrape import (
-    get_games, get_starters, get_recap, condense,
+    get_games, get_players, get_recap, condense,
+    load_player_log, save_player_log, update_player_log, generate_blurbs,
     DATA_DIR, log, DELAY,
 )
 import json
 
 
-def scrape_date(date_str: str) -> dict:
+def scrape_date(date_str: str, plog: dict) -> dict:
     """Scrape all games for a single date."""
     games = get_games(date_str)
     results = []
@@ -26,7 +26,7 @@ def scrape_date(date_str: str) -> dict:
         gid = g["espn_id"]
         time.sleep(DELAY)
 
-        starters = get_starters(gid)
+        players_data = get_players(gid)
         time.sleep(DELAY)
 
         recap_text = get_recap(gid)
@@ -46,6 +46,10 @@ def scrape_date(date_str: str) -> dict:
                 else:
                     summary = f"{winner} def. {loser}, {hi}-{lo}."
 
+        all_game_players = players_data.get("home", []) + players_data.get("away", [])
+        update_player_log(plog, all_game_players, date_str)
+        blurbs = generate_blurbs(plog, all_game_players, date_str)
+
         results.append({
             "game_id": gid,
             "status": g["status"],
@@ -53,15 +57,16 @@ def scrape_date(date_str: str) -> dict:
                 "name": g["home_team"],
                 "tricode": g["home_tricode"],
                 "score": g["home_score"],
-                "starters": starters.get("home", []),
+                "players": players_data.get("home", []),
             },
             "away": {
                 "name": g["away_team"],
                 "tricode": g["away_tricode"],
                 "score": g["away_score"],
-                "starters": starters.get("away", []),
+                "players": players_data.get("away", []),
             },
             "summary": summary,
+            "blurbs": blurbs,
         })
 
     return {"date": date_str, "games": results}
@@ -78,6 +83,7 @@ def main():
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
+    plog = load_player_log()
     current = start
     total_days = (end - start).days + 1
     day_num = 0
@@ -87,7 +93,6 @@ def main():
         date_str = current.strftime("%Y-%m-%d")
         out_file = DATA_DIR / f"{date_str}.json"
 
-        # Skip if already scraped
         if out_file.exists():
             log.info(f"[{day_num}/{total_days}] {date_str} — already exists, skipping.")
             current += timedelta(days=1)
@@ -96,25 +101,28 @@ def main():
         log.info(f"[{day_num}/{total_days}] Scraping {date_str}...")
 
         try:
-            data = scrape_date(date_str)
+            data = scrape_date(date_str, plog)
             with open(out_file, "w") as f:
                 json.dump(data, f, indent=2)
             log.info(f"  Wrote {len(data['games'])} game(s).")
         except Exception as e:
             log.error(f"  Failed: {e}")
 
-        # Rate limit: pause between days
         time.sleep(1)
         current += timedelta(days=1)
 
+    # Save player log
+    save_player_log(plog)
+    log.info(f"Player log: {len(plog)} players tracked.")
+
     # Update index
     dates = sorted(
-        [p.stem for p in DATA_DIR.glob("*.json") if p.stem != "index"],
+        [p.stem for p in DATA_DIR.glob("*.json") if p.stem not in ("index", "player_log")],
         reverse=True,
     )
     with open(DATA_DIR / "index.json", "w") as f:
         json.dump({"dates": dates}, f, indent=2)
-    log.info(f"Done. Index updated: {len(dates)} date(s).")
+    log.info(f"Done. Index: {len(dates)} date(s).")
 
 
 if __name__ == "__main__":
