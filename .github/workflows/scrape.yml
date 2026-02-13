@@ -2,9 +2,13 @@ name: NBA Daily Scrape
 
 on:
   schedule:
-    # 6:00 AM UTC = 1:00 AM ET
     - cron: "0 6 * * *"
   workflow_dispatch:
+    inputs:
+      date:
+        description: "Date to scrape (YYYY-MM-DD). Leave blank for today."
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -25,7 +29,12 @@ jobs:
         run: pip install requests beautifulsoup4
 
       - name: Run scraper
-        run: python scripts/scrape.py
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            python scripts/scrape.py ${{ github.event.inputs.date }}
+          else
+            python scripts/scrape.py
+          fi
 
       - name: Commit and push data
         run: |
