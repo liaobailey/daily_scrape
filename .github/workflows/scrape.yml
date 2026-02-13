@@ -2,9 +2,9 @@ name: NBA Daily Scrape
 
 on:
   schedule:
-    # Run at 6:00 AM UTC = 1:00 AM ET (most games done by then)
+    # 6:00 AM UTC = 1:00 AM ET
     - cron: "0 6 * * *"
-  workflow_dispatch: # Allow manual trigger from GitHub UI
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -22,10 +22,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: |
-          pip install playwright
-          playwright install chromium
-          playwright install-deps chromium
+        run: pip install requests beautifulsoup4
 
       - name: Run scraper
         run: python scripts/scrape.py
