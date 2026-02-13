@@ -1,0 +1,43 @@
+name: NBA Backfill
+
+on:
+  workflow_dispatch:
+    inputs:
+      start_date:
+        description: "Start date (YYYY-MM-DD)"
+        required: true
+        default: "2025-10-22"
+      end_date:
+        description: "End date (YYYY-MM-DD)"
+        required: true
+        default: "2026-02-13"
+
+permissions:
+  contents: write
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Run backfill
+        run: python scripts/backfill.py ${{ github.event.inputs.start_date }} ${{ github.event.inputs.end_date }}
+
+      - name: Commit and push data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/data/
+          git diff --cached --quiet || git commit -m "🏀 Backfill ${{ github.event.inputs.start_date }} to ${{ github.event.inputs.end_date }}"
+          git push
