@@ -235,9 +235,9 @@
       <div class="dot"></div>
     </div>
     <div class="date-nav">
-      <button id="prev-btn" onclick="navigate(-1)">← Prev</button>
+      <button id="prev-btn" onclick="navigate(1)">← Prev</button>
       <div class="current-date" id="date-display"></div>
-      <button id="next-btn" onclick="navigate(1)">Next →</button>
+      <button id="next-btn" onclick="navigate(-1)">Next →</button>
       <div class="date-picker-wrap">
         <input type="date" id="date-picker" onchange="jumpToDate(this.value)">
       </div>
