@@ -293,6 +293,10 @@ def condense(text: str) -> str:
         return text
 
     text = re.sub(r'\s+', ' ', text).strip()
+
+    # Strip city/dateline prefix like "OKLAHOMA CITY -- —" or "LOS ANGELES -- —"
+    text = re.sub(r'^[A-Z\s\.]+--\s*[-—–]?\s*', '', text).strip()
+
     sentences = re.split(r'(?<=[.!?])\s+', text)
     if not sentences:
         return text[:250]
@@ -316,9 +320,16 @@ def condense(text: str) -> str:
     top = scored[:2]
     top.sort(key=lambda x: x[1])
 
+    # Join and ensure we don't cut mid-sentence
     summary = ' '.join(s for _, _, s in top)
-    if len(summary) > 350:
-        summary = summary[:347] + '...'
+    if len(summary) > 400:
+        # Cut at the last sentence boundary within 400 chars
+        truncated = summary[:400]
+        last_period = max(truncated.rfind('.'), truncated.rfind('!'), truncated.rfind('?'))
+        if last_period > 100:
+            summary = truncated[:last_period + 1]
+        else:
+            summary = truncated.rstrip() + '...'
     return summary
 
 
