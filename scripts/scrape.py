@@ -188,7 +188,8 @@ def get_recap(game_id: str) -> str:
             if container:
                 paragraphs = container.find_all("p")
                 if paragraphs:
-                    text = " ".join(p.get_text(strip=True) for p in paragraphs)
+                    text = " ".join(p.get_text(separator=" ", strip=True) for p in paragraphs)
+                    text = re.sub(r'\s+', ' ', text).strip()
                     if len(text) > 50:
                         return text
 
