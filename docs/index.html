@@ -18,6 +18,7 @@
     --accent-glow: rgba(255, 107, 53, 0.15);
     --win: #4ade80;
     --lose: #f87171;
+    --blurb: #fbbf24;
     --radius: 12px;
   }
 
@@ -31,7 +32,6 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* --- Grain overlay --- */
   body::before {
     content: '';
     position: fixed;
@@ -42,41 +42,24 @@
     z-index: 9999;
   }
 
-  .container {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
 
-  /* --- Header --- */
   header {
     padding: 48px 0 32px;
     border-bottom: 1px solid var(--border);
     margin-bottom: 32px;
   }
 
-  .brand {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    margin-bottom: 16px;
-  }
+  .brand { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; }
 
   .brand h1 {
-    font-size: 2rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
+    font-size: 2rem; font-weight: 800; letter-spacing: -0.03em;
     background: linear-gradient(135deg, var(--accent), #ff9f6b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
 
   .brand .dot {
-    width: 8px;
-    height: 8px;
-    background: var(--accent);
-    border-radius: 50%;
+    width: 8px; height: 8px; background: var(--accent); border-radius: 50%;
     animation: pulse 2s ease-in-out infinite;
   }
 
@@ -85,93 +68,44 @@
     50% { opacity: 0.5; transform: scale(0.8); }
   }
 
-  /* --- Date nav --- */
-  .date-nav {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
+  .date-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 
   .date-nav button {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 8px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    transition: all 0.2s;
+    background: var(--surface); border: 1px solid var(--border); color: var(--text);
+    padding: 8px 16px; border-radius: 8px; cursor: pointer;
+    font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 600; transition: all 0.2s;
   }
 
-  .date-nav button:hover {
-    background: var(--surface2);
-    border-color: var(--accent);
-  }
+  .date-nav button:hover { background: var(--surface2); border-color: var(--accent); }
 
   .date-nav .current-date {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text);
-    min-width: 140px;
-    text-align: center;
+    font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; font-weight: 600;
+    min-width: 140px; text-align: center;
   }
 
-  .date-picker-wrap {
-    margin-left: auto;
-  }
+  .date-picker-wrap { margin-left: auto; }
 
   .date-picker-wrap input[type="date"] {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
-    cursor: pointer;
+    background: var(--surface); border: 1px solid var(--border); color: var(--text);
+    padding: 8px 12px; border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; cursor: pointer;
   }
 
-  .date-picker-wrap input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-  }
+  .date-picker-wrap input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); }
 
-  /* --- Loading / empty states --- */
-  .state-msg {
-    text-align: center;
-    padding: 80px 20px;
-    color: var(--text-dim);
-    font-size: 1.1rem;
-  }
-
-  .state-msg .emoji {
-    font-size: 2.5rem;
-    margin-bottom: 16px;
-  }
+  .state-msg { text-align: center; padding: 80px 20px; color: var(--text-dim); font-size: 1.1rem; }
+  .state-msg .emoji { font-size: 2.5rem; margin-bottom: 16px; }
 
   .loader {
-    width: 36px;
-    height: 36px;
-    border: 3px solid var(--border);
-    border-top-color: var(--accent);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    margin: 0 auto 16px;
+    width: 36px; height: 36px; border: 3px solid var(--border); border-top-color: var(--accent);
+    border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px;
   }
 
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  /* --- Game card --- */
   .game-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    margin-bottom: 20px;
-    overflow: hidden;
-    animation: fadeUp 0.4s ease-out both;
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    margin-bottom: 20px; overflow: hidden; animation: fadeUp 0.4s ease-out both;
   }
 
   .game-card:nth-child(1) { animation-delay: 0.05s; }
@@ -186,42 +120,20 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Score header */
-  .score-header {
-    padding: 20px 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
+  .score-header { padding: 20px 24px; display: flex; flex-direction: column; gap: 8px; }
 
-  .team-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
+  .team-row { display: flex; align-items: center; gap: 12px; }
 
   .team-tri {
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 600;
-    font-size: 0.8rem;
-    color: var(--text-dim);
-    width: 36px;
-    text-align: center;
-    letter-spacing: 0.05em;
+    font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 0.8rem;
+    color: var(--text-dim); width: 36px; text-align: center; letter-spacing: 0.05em;
   }
 
-  .team-name {
-    flex: 1;
-    font-weight: 600;
-    font-size: 1rem;
-  }
+  .team-name { flex: 1; font-weight: 600; font-size: 1rem; }
 
   .team-score {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.4rem;
-    font-weight: 800;
-    min-width: 48px;
-    text-align: right;
+    font-family: 'JetBrains Mono', monospace; font-size: 1.4rem; font-weight: 800;
+    min-width: 48px; text-align: right;
   }
 
   .team-row.winner .team-name { color: var(--text); }
@@ -230,143 +142,87 @@
   .team-row.loser .team-score { color: var(--text-dim); }
 
   .status-badge {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 4px 0;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 600;
+    color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 0;
   }
 
-  /* Summary */
   .game-summary {
-    padding: 0 24px 16px;
-    font-size: 0.9rem;
-    color: var(--text-dim);
-    line-height: 1.5;
-    font-weight: 300;
+    padding: 0 24px 16px; font-size: 0.9rem; color: var(--text-dim);
+    line-height: 1.5; font-weight: 300;
   }
 
-  /* Expandable starters */
-  .starters-toggle {
-    width: 100%;
-    background: none;
-    border: none;
-    border-top: 1px solid var(--border);
-    padding: 12px 24px;
-    color: var(--text-dim);
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: background 0.2s;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+  /* Blurbs */
+  .game-blurbs { padding: 0 24px 16px; }
+
+  .blurb {
+    font-size: 0.82rem; color: var(--blurb); line-height: 1.4;
+    padding: 4px 0; font-weight: 400;
   }
 
-  .starters-toggle:hover {
-    background: var(--surface2);
-    color: var(--text);
+  /* Toggle buttons */
+  .section-toggle {
+    width: 100%; background: none; border: none; border-top: 1px solid var(--border);
+    padding: 12px 24px; color: var(--text-dim);
+    font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 600;
+    cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+    transition: background 0.2s; letter-spacing: 0.05em; text-transform: uppercase;
   }
 
-  .starters-toggle .arrow {
-    transition: transform 0.3s;
-    font-size: 0.7rem;
+  .section-toggle:hover { background: var(--surface2); color: var(--text); }
+  .section-toggle .arrow { transition: transform 0.3s; font-size: 0.7rem; }
+  .section-toggle.open .arrow { transform: rotate(180deg); }
+
+  .section-panel { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+  .section-panel.open { max-height: 2000px; }
+
+  .section-content { padding: 0 24px 20px; }
+
+  .team-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 600;
+    color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase;
+    margin-top: 14px; margin-bottom: 8px;
   }
 
-  .starters-toggle.open .arrow {
-    transform: rotate(180deg);
+  .player-row {
+    display: grid; grid-template-columns: 28px 1fr auto;
+    gap: 8px; align-items: center; padding: 5px 0; font-size: 0.85rem;
   }
 
-  .starters-panel {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease;
+  .player-pos {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 600;
+    color: var(--accent); background: var(--accent-glow); border-radius: 4px;
+    padding: 2px 0; text-align: center;
   }
 
-  .starters-panel.open {
-    max-height: 600px;
+  .player-name { font-weight: 400; color: var(--text); }
+  .player-name.bench { color: var(--text-dim); font-weight: 300; }
+
+  .player-stats {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-dim);
   }
 
-  .starters-content {
-    padding: 0 24px 20px;
+  .player-stats span { display: inline-block; min-width: 52px; text-align: right; }
+
+  .player-min {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
+    color: var(--text-dim); opacity: 0.6;
   }
 
-  .starters-team-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: var(--accent);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-top: 14px;
-    margin-bottom: 8px;
-  }
-
-  .starter-row {
-    display: grid;
-    grid-template-columns: 28px 1fr auto;
-    gap: 8px;
-    align-items: center;
-    padding: 5px 0;
-    font-size: 0.85rem;
-  }
-
-  .starter-pos {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: var(--accent);
-    background: var(--accent-glow);
-    border-radius: 4px;
-    padding: 2px 0;
-    text-align: center;
-  }
-
-  .starter-name {
-    font-weight: 400;
-    color: var(--text);
-  }
-
-  .starter-stats {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--text-dim);
-  }
-
-  .starter-stats span {
-    display: inline-block;
-    min-width: 52px;
-    text-align: right;
-  }
-
-  /* --- Footer --- */
   footer {
-    padding: 40px 0;
-    text-align: center;
-    color: var(--text-dim);
-    font-size: 0.75rem;
-    border-top: 1px solid var(--border);
-    margin-top: 40px;
+    padding: 40px 0; text-align: center; color: var(--text-dim); font-size: 0.75rem;
+    border-top: 1px solid var(--border); margin-top: 40px;
   }
 
-  footer a {
-    color: var(--accent);
-    text-decoration: none;
-  }
+  footer a { color: var(--accent); text-decoration: none; }
 
-  /* --- Responsive --- */
   @media (max-width: 600px) {
     .brand h1 { font-size: 1.5rem; }
     .score-header { padding: 16px; }
     .game-summary { padding: 0 16px 12px; }
-    .starters-toggle { padding: 10px 16px; }
-    .starters-content { padding: 0 16px 16px; }
+    .section-toggle { padding: 10px 16px; }
+    .section-content { padding: 0 16px 16px; }
     .date-picker-wrap { margin-left: 0; margin-top: 8px; }
+    .player-stats span { min-width: 40px; }
   }
 </style>
 </head>
@@ -389,21 +245,15 @@
   </header>
 
   <main id="content">
-    <div class="state-msg">
-      <div class="loader"></div>
-      Loading...
-    </div>
+    <div class="state-msg"><div class="loader"></div>Loading...</div>
   </main>
 
   <footer>
-    Data from <a href="https://nba.com" target="_blank">NBA.com</a> · Updated daily at 1 AM ET via GitHub Actions
+    Data from <a href="https://espn.com/nba/" target="_blank">ESPN</a> · Updated daily via GitHub Actions
   </footer>
 </div>
 
 <script>
-// ---------------------------------------------------------------------------
-// State
-// ---------------------------------------------------------------------------
 let availableDates = [];
 let currentIndex = 0;
 
@@ -413,18 +263,13 @@ const $datePicker = document.getElementById('date-picker');
 const $prevBtn = document.getElementById('prev-btn');
 const $nextBtn = document.getElementById('next-btn');
 
-// ---------------------------------------------------------------------------
-// Data fetching
-// ---------------------------------------------------------------------------
 async function loadIndex() {
   try {
     const resp = await fetch('data/index.json');
     if (!resp.ok) throw new Error('No index');
     const data = await resp.json();
-    availableDates = data.dates || []; // sorted descending
-  } catch {
-    availableDates = [];
-  }
+    availableDates = data.dates || [];
+  } catch { availableDates = []; }
 }
 
 async function loadDate(dateStr) {
@@ -438,54 +283,35 @@ async function loadDate(dateStr) {
     $content.innerHTML = `
       <div class="state-msg">
         <div class="emoji">🏀</div>
-        No data for ${formatDateDisplay(dateStr)}.<br>
+        No data for ${fmtDate(dateStr)}.<br>
         <span style="font-size:0.85rem;">Games may not have been played, or data hasn't been scraped yet.</span>
       </div>`;
   }
 }
 
-// ---------------------------------------------------------------------------
-// Navigation
-// ---------------------------------------------------------------------------
 function navigate(dir) {
-  const newIdx = currentIndex + dir;
-  if (newIdx >= 0 && newIdx < availableDates.length) {
-    currentIndex = newIdx;
-    updateView();
-  }
+  const n = currentIndex + dir;
+  if (n >= 0 && n < availableDates.length) { currentIndex = n; updateView(); }
 }
 
 function jumpToDate(val) {
   if (!val) return;
   const idx = availableDates.indexOf(val);
-  if (idx !== -1) {
-    currentIndex = idx;
-    updateView();
-  } else {
-    // Date not in index — try loading anyway
-    currentIndex = -1;
-    $dateDisplay.textContent = formatDateDisplay(val);
-    $datePicker.value = val;
-    loadDate(val);
-  }
+  if (idx !== -1) { currentIndex = idx; updateView(); }
+  else { $dateDisplay.textContent = fmtDate(val); $datePicker.value = val; loadDate(val); }
 }
 
 function updateView() {
   if (availableDates.length === 0) {
-    $content.innerHTML = `
-      <div class="state-msg">
-        <div class="emoji">📡</div>
-        No data yet.<br>
-        <span style="font-size:0.85rem;">The scraper runs daily at 1 AM ET. Check back after games are played.</span>
-      </div>`;
+    $content.innerHTML = `<div class="state-msg"><div class="emoji">📡</div>No data yet.</div>`;
     return;
   }
-  const dateStr = availableDates[currentIndex];
-  $dateDisplay.textContent = formatDateDisplay(dateStr);
-  $datePicker.value = dateStr;
+  const d = availableDates[currentIndex];
+  $dateDisplay.textContent = fmtDate(d);
+  $datePicker.value = d;
   $prevBtn.disabled = currentIndex >= availableDates.length - 1;
   $nextBtn.disabled = currentIndex <= 0;
-  loadDate(dateStr);
+  loadDate(d);
 }
 
 // ---------------------------------------------------------------------------
@@ -494,113 +320,128 @@ function updateView() {
 function render(data) {
   const games = data.games || [];
   if (games.length === 0) {
-    $content.innerHTML = `
-      <div class="state-msg">
-        <div class="emoji">😴</div>
-        No games on ${formatDateDisplay(data.date)}.
-      </div>`;
+    $content.innerHTML = `<div class="state-msg"><div class="emoji">😴</div>No games on ${fmtDate(data.date)}.</div>`;
     return;
   }
-
   $content.innerHTML = games.map((g, i) => gameCard(g, i)).join('');
 }
 
 function gameCard(g, idx) {
-  const home = g.home;
-  const away = g.away;
+  const home = g.home, away = g.away;
   const isFinal = g.status && g.status.includes('Final');
   const homeWon = home.score > away.score;
+
+  // Support both old format (starters) and new format (players)
+  const homeStarters = getStarters(home);
+  const awayStarters = getStarters(away);
+  const homeBench = getBench(home);
+  const awayBench = getBench(away);
+  const hasPlayers = homeStarters.length > 0 || awayStarters.length > 0;
+
+  const blurbs = (g.blurbs || []).map(b => `<div class="blurb">${esc(b)}</div>`).join('');
 
   return `
     <div class="game-card">
       <div class="score-header">
-        <div class="status-badge">${escHtml(g.status)}</div>
+        <div class="status-badge">${esc(g.status)}</div>
         <div class="team-row ${isFinal ? (homeWon ? 'loser' : 'winner') : ''}">
-          <div class="team-tri">${escHtml(away.tricode)}</div>
-          <div class="team-name">${escHtml(away.name)}</div>
+          <div class="team-tri">${esc(away.tricode)}</div>
+          <div class="team-name">${esc(away.name)}</div>
           <div class="team-score">${away.score}</div>
         </div>
         <div class="team-row ${isFinal ? (homeWon ? 'winner' : 'loser') : ''}">
-          <div class="team-tri">${escHtml(home.tricode)}</div>
-          <div class="team-name">${escHtml(home.name)}</div>
+          <div class="team-tri">${esc(home.tricode)}</div>
+          <div class="team-name">${esc(home.name)}</div>
           <div class="team-score">${home.score}</div>
         </div>
       </div>
-      ${g.summary ? `<div class="game-summary">${escHtml(g.summary)}</div>` : ''}
-      ${startersSection(g, idx)}
+      ${g.summary ? `<div class="game-summary">${esc(g.summary)}</div>` : ''}
+      ${blurbs ? `<div class="game-blurbs">${blurbs}</div>` : ''}
+      ${hasPlayers ? startersSection(away, home, idx) : ''}
+      ${(homeBench.length > 0 || awayBench.length > 0) ? rosterSection(away, home, awayBench, homeBench, idx) : ''}
     </div>`;
 }
 
-function startersSection(g, idx) {
-  const homeS = g.home.starters || [];
-  const awayS = g.away.starters || [];
-  if (homeS.length === 0 && awayS.length === 0) return '';
+function getStarters(team) {
+  if (team.starters && team.starters.length > 0) return team.starters;
+  if (team.players) return team.players.filter(p => p.starter);
+  return [];
+}
 
+function getBench(team) {
+  if (!team.players) return [];
+  return team.players.filter(p => !p.starter && !p.dnp);
+}
+
+function startersSection(away, home, idx) {
+  const awayS = getStarters(away), homeS = getStarters(home);
+  if (awayS.length === 0 && homeS.length === 0) return '';
   const id = `starters-${idx}`;
   return `
-    <button class="starters-toggle" onclick="toggleStarters('${id}', this)">
-      Starters
-      <span class="arrow">▼</span>
+    <button class="section-toggle" onclick="toggle('${id}', this)">
+      Starters <span class="arrow">▼</span>
     </button>
-    <div class="starters-panel" id="${id}">
-      <div class="starters-content">
-        ${startersTeam(g.away.tricode, awayS)}
-        ${startersTeam(g.home.tricode, homeS)}
+    <div class="section-panel" id="${id}">
+      <div class="section-content">
+        ${playerRows(away.tricode, awayS, false)}
+        ${playerRows(home.tricode, homeS, false)}
       </div>
     </div>`;
 }
 
-function startersTeam(tri, starters) {
-  if (starters.length === 0) return '';
-  const rows = starters.map(s => `
-    <div class="starter-row">
-      <div class="starter-pos">${escHtml(s.position || '—')}</div>
-      <div class="starter-name">${escHtml(s.name)}</div>
-      <div class="starter-stats">
-        <span>${s.pts} pts</span>
-        <span>${s.reb} reb</span>
-        <span>${s.ast} ast</span>
+function rosterSection(away, home, awayBench, homeBench, idx) {
+  const id = `bench-${idx}`;
+  return `
+    <button class="section-toggle" onclick="toggle('${id}', this)">
+      Full Roster <span class="arrow">▼</span>
+    </button>
+    <div class="section-panel" id="${id}">
+      <div class="section-content">
+        ${playerRows(away.tricode, awayBench, true)}
+        ${playerRows(home.tricode, homeBench, true)}
       </div>
-    </div>`).join('');
-  return `<div class="starters-team-label">${escHtml(tri)}</div>${rows}`;
+    </div>`;
 }
 
-function toggleStarters(id, btn) {
-  const panel = document.getElementById(id);
-  panel.classList.toggle('open');
+function playerRows(tri, players, isBench) {
+  if (players.length === 0) return '';
+  const rows = players.map(p => `
+    <div class="player-row">
+      <div class="player-pos">${esc(p.position || '—')}</div>
+      <div class="player-name ${isBench ? 'bench' : ''}">${esc(p.name)}${p.min ? ` <span class="player-min">${Math.round(p.min)}m</span>` : ''}</div>
+      <div class="player-stats">
+        <span>${p.pts} pts</span>
+        <span>${p.reb} reb</span>
+        <span>${p.ast} ast</span>
+      </div>
+    </div>`).join('');
+  return `<div class="team-label">${esc(tri)}</div>${rows}`;
+}
+
+function toggle(id, btn) {
+  document.getElementById(id).classList.toggle('open');
   btn.classList.toggle('open');
 }
 
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
-function formatDateDisplay(dateStr) {
+function fmtDate(s) {
   try {
-    const [y, m, d] = dateStr.split('-').map(Number);
-    const dt = new Date(y, m - 1, d);
-    return dt.toLocaleDateString('en-US', {
+    const [y, m, d] = s.split('-').map(Number);
+    return new Date(y, m-1, d).toLocaleDateString('en-US', {
       weekday: 'short', month: 'short', day: 'numeric', year: 'numeric'
     });
-  } catch {
-    return dateStr;
-  }
+  } catch { return s; }
 }
 
-function escHtml(str) {
+function esc(str) {
   if (!str) return '';
   const d = document.createElement('div');
   d.textContent = str;
   return d.innerHTML;
 }
 
-// ---------------------------------------------------------------------------
-// Init
-// ---------------------------------------------------------------------------
 (async () => {
   await loadIndex();
-  if (availableDates.length > 0) {
-    currentIndex = 0; // most recent
-  }
+  if (availableDates.length > 0) currentIndex = 0;
   updateView();
 })();
 </script>
