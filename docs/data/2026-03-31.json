@@ -1,0 +1,131 @@
+{
+  "date": "2026-03-31",
+  "games": [
+    {
+      "game_id": "401810954",
+      "status": "Scheduled",
+      "home": {
+        "name": "Orlando Magic",
+        "tricode": "ORL",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Phoenix Suns",
+        "tricode": "PHX",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401810955",
+      "status": "Scheduled",
+      "home": {
+        "name": "Brooklyn Nets",
+        "tricode": "BKN",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Charlotte Hornets",
+        "tricode": "CHA",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401810956",
+      "status": "Scheduled",
+      "home": {
+        "name": "Detroit Pistons",
+        "tricode": "DET",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Toronto Raptors",
+        "tricode": "TOR",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401810957",
+      "status": "Scheduled",
+      "home": {
+        "name": "Houston Rockets",
+        "tricode": "HOU",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "New York Knicks",
+        "tricode": "NY",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401858694",
+      "status": "Scheduled",
+      "home": {
+        "name": "Milwaukee Bucks",
+        "tricode": "MIL",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Dallas Mavericks",
+        "tricode": "DAL",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401810958",
+      "status": "Scheduled",
+      "home": {
+        "name": "Los Angeles Lakers",
+        "tricode": "LAL",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Cleveland Cavaliers",
+        "tricode": "CLE",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401810959",
+      "status": "Scheduled",
+      "home": {
+        "name": "LA Clippers",
+        "tricode": "LAC",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Portland Trail Blazers",
+        "tricode": "POR",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    }
+  ]
+}
