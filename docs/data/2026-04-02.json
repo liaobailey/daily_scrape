@@ -1,0 +1,113 @@
+{
+  "date": "2026-04-02",
+  "games": [
+    {
+      "game_id": "401810969",
+      "status": "Scheduled",
+      "home": {
+        "name": "Charlotte Hornets",
+        "tricode": "CHA",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Phoenix Suns",
+        "tricode": "PHX",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401810970",
+      "status": "Scheduled",
+      "home": {
+        "name": "Detroit Pistons",
+        "tricode": "DET",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Minnesota Timberwolves",
+        "tricode": "MIN",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401810971",
+      "status": "Scheduled",
+      "home": {
+        "name": "Oklahoma City Thunder",
+        "tricode": "OKC",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Los Angeles Lakers",
+        "tricode": "LAL",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401810972",
+      "status": "Scheduled",
+      "home": {
+        "name": "Golden State Warriors",
+        "tricode": "GS",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Cleveland Cavaliers",
+        "tricode": "CLE",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401810973",
+      "status": "Scheduled",
+      "home": {
+        "name": "Portland Trail Blazers",
+        "tricode": "POR",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "New Orleans Pelicans",
+        "tricode": "NO",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401810974",
+      "status": "Scheduled",
+      "home": {
+        "name": "LA Clippers",
+        "tricode": "LAC",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "San Antonio Spurs",
+        "tricode": "SA",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    }
+  ]
+}
