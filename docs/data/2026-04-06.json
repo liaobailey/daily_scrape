@@ -1,0 +1,95 @@
+{
+  "date": "2026-04-06",
+  "games": [
+    {
+      "game_id": "401810998",
+      "status": "Scheduled",
+      "home": {
+        "name": "Atlanta Hawks",
+        "tricode": "ATL",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "New York Knicks",
+        "tricode": "NY",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401810999",
+      "status": "Scheduled",
+      "home": {
+        "name": "Orlando Magic",
+        "tricode": "ORL",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Detroit Pistons",
+        "tricode": "DET",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401811000",
+      "status": "Scheduled",
+      "home": {
+        "name": "Memphis Grizzlies",
+        "tricode": "MEM",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Cleveland Cavaliers",
+        "tricode": "CLE",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401811001",
+      "status": "Scheduled",
+      "home": {
+        "name": "San Antonio Spurs",
+        "tricode": "SA",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Philadelphia 76ers",
+        "tricode": "PHI",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401811002",
+      "status": "Scheduled",
+      "home": {
+        "name": "Denver Nuggets",
+        "tricode": "DEN",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Portland Trail Blazers",
+        "tricode": "POR",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    }
+  ]
+}
