@@ -1,0 +1,41 @@
+{
+  "date": "2026-04-14",
+  "games": [
+    {
+      "game_id": "401866755",
+      "status": "Scheduled",
+      "home": {
+        "name": "Charlotte Hornets",
+        "tricode": "CHA",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Miami Heat",
+        "tricode": "MIA",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401866754",
+      "status": "Scheduled",
+      "home": {
+        "name": "Phoenix Suns",
+        "tricode": "PHX",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Portland Trail Blazers",
+        "tricode": "POR",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    }
+  ]
+}
