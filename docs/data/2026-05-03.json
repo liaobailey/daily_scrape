@@ -1,0 +1,41 @@
+{
+  "date": "2026-05-03",
+  "games": [
+    {
+      "game_id": "401869418",
+      "status": "Scheduled",
+      "home": {
+        "name": "Detroit Pistons",
+        "tricode": "DET",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Orlando Magic",
+        "tricode": "ORL",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401869384",
+      "status": "Scheduled",
+      "home": {
+        "name": "Cleveland Cavaliers",
+        "tricode": "CLE",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Toronto Raptors",
+        "tricode": "TOR",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    }
+  ]
+}
