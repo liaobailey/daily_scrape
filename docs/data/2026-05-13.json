@@ -1,0 +1,23 @@
+{
+  "date": "2026-05-13",
+  "games": [
+    {
+      "game_id": "401871337",
+      "status": "Scheduled",
+      "home": {
+        "name": "Detroit Pistons",
+        "tricode": "DET",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Cleveland Cavaliers",
+        "tricode": "CLE",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    }
+  ]
+}
