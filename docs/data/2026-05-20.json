@@ -1,0 +1,23 @@
+{
+  "date": "2026-05-20",
+  "games": [
+    {
+      "game_id": "401873198",
+      "status": "Scheduled",
+      "home": {
+        "name": "Oklahoma City Thunder",
+        "tricode": "OKC",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "San Antonio Spurs",
+        "tricode": "SA",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    }
+  ]
+}
