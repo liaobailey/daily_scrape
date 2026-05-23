@@ -1,0 +1,23 @@
+{
+  "date": "2026-05-23",
+  "games": [
+    {
+      "game_id": "401873343",
+      "status": "Scheduled",
+      "home": {
+        "name": "Cleveland Cavaliers",
+        "tricode": "CLE",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "New York Knicks",
+        "tricode": "NY",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    }
+  ]
+}
