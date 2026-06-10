@@ -1,0 +1,23 @@
+{
+  "date": "2026-06-10",
+  "games": [
+    {
+      "game_id": "401859966",
+      "status": "Scheduled",
+      "home": {
+        "name": "New York Knicks",
+        "tricode": "NY",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "San Antonio Spurs",
+        "tricode": "SA",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    }
+  ]
+}
