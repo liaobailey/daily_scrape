@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-06",
+  "games": [
+    {
+      "game_id": "401901820",
+      "status": "Scheduled",
+      "home": {
+        "name": "Charlotte Hornets",
+        "tricode": "CHA",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Brooklyn Nets",
+        "tricode": "BKN",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401898389",
+      "status": "Scheduled",
+      "home": {
+        "name": "Oklahoma City Thunder",
+        "tricode": "OKC",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "New Orleans Pelicans",
+        "tricode": "NO",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401914128",
+      "status": "Scheduled",
+      "home": {
+        "name": "Utah Jazz",
+        "tricode": "UTAH",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Denver Nuggets",
+        "tricode": "DEN",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401898390",
+      "status": "Scheduled",
+      "home": {
+        "name": "Golden State Warriors",
+        "tricode": "GS",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Los Angeles Lakers",
+        "tricode": "LAL",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    }
+  ]
+}
