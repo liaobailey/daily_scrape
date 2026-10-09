@@ -2133,10 +2133,10 @@
   },
   "5211175": {
     "name": "Zaccharie Risacher",
-    "team": "ATL",
-    "games": 42,
-    "starts": 42,
-    "total_min": 1017.0,
+    "team": "DAL",
+    "games": 43,
+    "starts": 43,
+    "total_min": 1026.0,
     "dates_started": [
       "2025-10-22",
       "2025-10-27",
@@ -2179,7 +2179,8 @@
       "2026-02-05",
       "2026-02-07",
       "2026-02-09",
-      "2026-02-11"
+      "2026-02-11",
+      "2026-10-09"
     ]
   },
   "3102531": {
@@ -6338,9 +6339,9 @@
   "5041939": {
     "name": "Cooper Flagg",
     "team": "DAL",
-    "games": 49,
-    "starts": 49,
-    "total_min": 1672.0,
+    "games": 50,
+    "starts": 50,
+    "total_min": 1688.0,
     "dates_started": [
       "2025-10-22",
       "2025-10-24",
@@ -6390,7 +6391,8 @@
       "2026-02-03",
       "2026-02-05",
       "2026-02-07",
-      "2026-02-10"
+      "2026-02-10",
+      "2026-10-09"
     ]
   },
   "4683688": {
@@ -6426,9 +6428,9 @@
   "2531367": {
     "name": "Dwight Powell",
     "team": "DAL",
-    "games": 39,
+    "games": 40,
     "starts": 7,
-    "total_min": 542.0,
+    "total_min": 545.0,
     "dates_started": [
       "2025-11-29",
       "2026-01-12",
@@ -6461,9 +6463,9 @@
   "4278594": {
     "name": "Naji Marshall",
     "team": "DAL",
-    "games": 53,
-    "starts": 29,
-    "total_min": 1566.0,
+    "games": 54,
+    "starts": 30,
+    "total_min": 1576.0,
     "dates_started": [
       "2025-11-14",
       "2025-11-29",
@@ -6493,7 +6495,8 @@
       "2026-02-03",
       "2026-02-05",
       "2026-02-07",
-      "2026-02-12"
+      "2026-02-12",
+      "2026-10-09"
     ]
   },
   "4701208": {
@@ -6542,9 +6545,9 @@
   "4432582": {
     "name": "Max Christie",
     "team": "DAL",
-    "games": 50,
-    "starts": 41,
-    "total_min": 1481.0,
+    "games": 51,
+    "starts": 42,
+    "total_min": 1494.0,
     "dates_started": [
       "2025-10-27",
       "2025-10-29",
@@ -6586,7 +6589,8 @@
       "2026-02-05",
       "2026-02-07",
       "2026-02-10",
-      "2026-02-12"
+      "2026-02-12",
+      "2026-10-09"
     ]
   },
   "4433629": {
@@ -9637,10 +9641,10 @@
   },
   "5105806": {
     "name": "Jett Howard",
-    "team": "ORL",
-    "games": 33,
+    "team": "DAL",
+    "games": 34,
     "starts": 0,
-    "total_min": 345.0,
+    "total_min": 350.0,
     "dates_started": []
   },
   "4873201": {
@@ -9788,9 +9792,9 @@
   "3202": {
     "name": "Kevin Durant",
     "team": "HOU",
-    "games": 49,
-    "starts": 49,
-    "total_min": 1789.0,
+    "games": 50,
+    "starts": 50,
+    "total_min": 1801.0,
     "dates_started": [
       "2025-10-24",
       "2025-10-27",
@@ -9840,15 +9844,16 @@
       "2026-02-05",
       "2026-02-07",
       "2026-02-10",
-      "2026-02-11"
+      "2026-02-11",
+      "2026-10-09"
     ]
   },
   "4432639": {
     "name": "Jabari Smith Jr.",
     "team": "HOU",
-    "games": 51,
-    "starts": 51,
-    "total_min": 1782.0,
+    "games": 52,
+    "starts": 52,
+    "total_min": 1798.0,
     "dates_started": [
       "2025-10-24",
       "2025-10-27",
@@ -9900,15 +9905,16 @@
       "2026-02-05",
       "2026-02-07",
       "2026-02-10",
-      "2026-02-11"
+      "2026-02-11",
+      "2026-10-09"
     ]
   },
   "2991235": {
     "name": "Steven Adams",
     "team": "HOU",
-    "games": 31,
+    "games": 32,
     "starts": 10,
-    "total_min": 693.0,
+    "total_min": 700.0,
     "dates_started": [
       "2025-10-24",
       "2025-11-19",
@@ -9925,9 +9931,9 @@
   "4871144": {
     "name": "Alperen Sengun",
     "team": "HOU",
-    "games": 45,
-    "starts": 45,
-    "total_min": 1512.0,
+    "games": 46,
+    "starts": 46,
+    "total_min": 1524.0,
     "dates_started": [
       "2025-10-24",
       "2025-10-27",
@@ -9973,15 +9979,16 @@
       "2026-02-05",
       "2026-02-07",
       "2026-02-10",
-      "2026-02-11"
+      "2026-02-11",
+      "2026-10-09"
     ]
   },
   "4684740": {
     "name": "Amen Thompson",
     "team": "HOU",
-    "games": 51,
-    "starts": 51,
-    "total_min": 1898.0,
+    "games": 52,
+    "starts": 52,
+    "total_min": 1910.0,
     "dates_started": [
       "2025-10-24",
       "2025-10-27",
@@ -10033,15 +10040,16 @@
       "2026-02-04",
       "2026-02-05",
       "2026-02-10",
-      "2026-02-11"
+      "2026-02-11",
+      "2026-10-09"
     ]
   },
   "4433192": {
     "name": "Tari Eason",
     "team": "HOU",
-    "games": 30,
+    "games": 31,
     "starts": 17,
-    "total_min": 769.0,
+    "total_min": 779.0,
     "dates_started": [
       "2025-11-03",
       "2025-12-25",
@@ -10113,9 +10121,9 @@
   "4711272": {
     "name": "Reed Sheppard",
     "team": "HOU",
-    "games": 52,
+    "games": 53,
     "starts": 6,
-    "total_min": 1284.0,
+    "total_min": 1291.0,
     "dates_started": [
       "2025-11-24",
       "2025-11-26",
@@ -11055,10 +11063,10 @@
   },
   "3037789": {
     "name": "Bogdan Bogdanovic",
-    "team": "LAC",
-    "games": 17,
+    "team": "HOU",
+    "games": 18,
     "starts": 3,
-    "total_min": 372.0,
+    "total_min": 375.0,
     "dates_started": [
       "2025-10-26",
       "2025-10-28",
@@ -11579,9 +11587,9 @@
   "4278049": {
     "name": "Daniel Gafford",
     "team": "DAL",
-    "games": 38,
+    "games": 39,
     "starts": 28,
-    "total_min": 811.0,
+    "total_min": 817.0,
     "dates_started": [
       "2025-11-01",
       "2025-11-03",
@@ -12816,5 +12824,57 @@
     "starts": 0,
     "total_min": 25.0,
     "dates_started": []
+  },
+  "4873153": {
+    "name": "Morez Johnson Jr.",
+    "team": "DAL",
+    "games": 1,
+    "starts": 1,
+    "total_min": 9.0,
+    "dates_started": [
+      "2026-10-09"
+    ]
+  },
+  "5106040": {
+    "name": "Tobi Lawal",
+    "team": "DAL",
+    "games": 1,
+    "starts": 0,
+    "total_min": 3.0,
+    "dates_started": []
+  },
+  "5148538": {
+    "name": "Tarik Biberovic",
+    "team": "DAL",
+    "games": 1,
+    "starts": 0,
+    "total_min": 6.0,
+    "dates_started": []
+  },
+  "5279129": {
+    "name": "Sergio de Larrea",
+    "team": "DAL",
+    "games": 1,
+    "starts": 0,
+    "total_min": 10.0,
+    "dates_started": []
+  },
+  "4431775": {
+    "name": "Seth Lundy",
+    "team": "DAL",
+    "games": 1,
+    "starts": 0,
+    "total_min": 5.0,
+    "dates_started": []
+  },
+  "2991230": {
+    "name": "Fred VanVleet",
+    "team": "HOU",
+    "games": 1,
+    "starts": 1,
+    "total_min": 16.0,
+    "dates_started": [
+      "2026-10-09"
+    ]
   }
 }
