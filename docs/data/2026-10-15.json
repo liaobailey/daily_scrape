@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-15",
+  "games": [
+    {
+      "game_id": "401908945",
+      "status": "Scheduled",
+      "home": {
+        "name": "New York Knicks",
+        "tricode": "NY",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Toronto Raptors",
+        "tricode": "TOR",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401908622",
+      "status": "Scheduled",
+      "home": {
+        "name": "Houston Rockets",
+        "tricode": "HOU",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Oklahoma City Thunder",
+        "tricode": "OKC",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    }
+  ]
+}
