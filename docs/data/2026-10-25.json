@@ -1,0 +1,131 @@
+{
+  "date": "2026-10-25",
+  "games": [
+    {
+      "game_id": "401909861",
+      "status": "Scheduled",
+      "home": {
+        "name": "Utah Jazz",
+        "tricode": "UTAH",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Los Angeles Lakers",
+        "tricode": "LAL",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401909862",
+      "status": "Scheduled",
+      "home": {
+        "name": "Brooklyn Nets",
+        "tricode": "BKN",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Indiana Pacers",
+        "tricode": "IND",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401909863",
+      "status": "Scheduled",
+      "home": {
+        "name": "New York Knicks",
+        "tricode": "NY",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Orlando Magic",
+        "tricode": "ORL",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401909864",
+      "status": "Scheduled",
+      "home": {
+        "name": "Minnesota Timberwolves",
+        "tricode": "MIN",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Toronto Raptors",
+        "tricode": "TOR",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401909865",
+      "status": "Scheduled",
+      "home": {
+        "name": "Oklahoma City Thunder",
+        "tricode": "OKC",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "LA Clippers",
+        "tricode": "LAC",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401909866",
+      "status": "Scheduled",
+      "home": {
+        "name": "Philadelphia 76ers",
+        "tricode": "PHI",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Detroit Pistons",
+        "tricode": "DET",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401909867",
+      "status": "Scheduled",
+      "home": {
+        "name": "Sacramento Kings",
+        "tricode": "SAC",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Memphis Grizzlies",
+        "tricode": "MEM",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    }
+  ]
+}
