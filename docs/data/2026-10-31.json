@@ -1,0 +1,131 @@
+{
+  "date": "2026-10-31",
+  "games": [
+    {
+      "game_id": "401909896",
+      "status": "Scheduled",
+      "home": {
+        "name": "Utah Jazz",
+        "tricode": "UTAH",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Portland Trail Blazers",
+        "tricode": "POR",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401909897",
+      "status": "Scheduled",
+      "home": {
+        "name": "Charlotte Hornets",
+        "tricode": "CHA",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Philadelphia 76ers",
+        "tricode": "PHI",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401909898",
+      "status": "Scheduled",
+      "home": {
+        "name": "New Orleans Pelicans",
+        "tricode": "NO",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Atlanta Hawks",
+        "tricode": "ATL",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401909899",
+      "status": "Scheduled",
+      "home": {
+        "name": "Memphis Grizzlies",
+        "tricode": "MEM",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Sacramento Kings",
+        "tricode": "SAC",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401909900",
+      "status": "Scheduled",
+      "home": {
+        "name": "Milwaukee Bucks",
+        "tricode": "MIL",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Cleveland Cavaliers",
+        "tricode": "CLE",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401909901",
+      "status": "Scheduled",
+      "home": {
+        "name": "San Antonio Spurs",
+        "tricode": "SA",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Minnesota Timberwolves",
+        "tricode": "MIN",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    },
+    {
+      "game_id": "401909902",
+      "status": "Scheduled",
+      "home": {
+        "name": "Houston Rockets",
+        "tricode": "HOU",
+        "score": 0,
+        "players": []
+      },
+      "away": {
+        "name": "Oklahoma City Thunder",
+        "tricode": "OKC",
+        "score": 0,
+        "players": []
+      },
+      "summary": "",
+      "blurbs": []
+    }
+  ]
+}
